@@ -1,0 +1,55 @@
+body{
+    background-color: whitesmoke;
+    margin-left: 45px;
+    margin-right: 45px;
+
+}
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #262b15;
+    size: 32px;
+}
+h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #3f3f3f;
+    size: 24px;
+}
+h3{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #464b37;
+    size: 24px;
+}
+h4{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #848871;
+    size: 12px;
+}
+p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #848871;
+    size: 12px;
+}
+
+/* horizonal navegation bar */
+
+    /* the bar itself */
+    .navbar ul {
+        list-style-type: none; /* Removes bullet points */
+        display: flex;         /* makes the bar horizontal */
+        justify-content: center; /* centers the contents of the bar */
+        background-color: #afb4ad; /* background for the bar */
+    }
+
+    /* the contents if the bar */
+    .navbar li a {
+        display: block;      /* makes the bar click-able */
+        color: #262b15;    /* color of the contents */
+        text-align: center;  /* centers the contents */
+        padding: 14px 16px;  /* space between each item */
+        text-decoration: none; /* removes the link-ish look */
+    }
+
+    /* hover mouse effect */
+    .navbar li a:hover {
+        background-color:#848871;
+    }
