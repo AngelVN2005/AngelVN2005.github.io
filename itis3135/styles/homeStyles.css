@@ -35,3 +35,12 @@ li{
     color: #386994;
     size: 12px;
 }
+blockquote{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #386994;
+    size: 12px;
+}
+img {
+  display: block;
+  margin: auto;
+}
