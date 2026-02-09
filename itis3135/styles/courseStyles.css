@@ -51,10 +51,11 @@ img {
     .navbar ul {
         list-style-type: none; /* Removes bullet points */
         display: flex;         /* makes the bar horizontal */
+        overflow: hidden;      /* hides the contents when they overflow*/
         justify-content: center; /* centers the contents of the bar */
         background-color: #afb4ad; /* background for the bar */
     }
-    /* the contents if the bar */
+    /* the contents of the bar */
     .navbar li a {
         display: block;      /* makes the bar click-able */
         color: #262b15;    /* color of the contents */
