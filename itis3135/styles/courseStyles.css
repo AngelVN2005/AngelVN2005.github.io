@@ -26,12 +26,23 @@ h4{
 }
 p{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #848871;
+    color: #3d3d3d;
     size: 12px;
 }
+figcaption{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #3f3f3f;
+    font-style: italic;
+    size: 8px;
+}
+
+/* information block*/
+    .infoBlock{
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
 
 /* horizonal navegation bar */
-
     /* the bar itself */
     .navbar ul {
         list-style-type: none; /* Removes bullet points */
@@ -39,7 +50,6 @@ p{
         justify-content: center; /* centers the contents of the bar */
         background-color: #afb4ad; /* background for the bar */
     }
-
     /* the contents if the bar */
     .navbar li a {
         display: block;      /* makes the bar click-able */
@@ -48,7 +58,6 @@ p{
         padding: 14px 16px;  /* space between each item */
         text-decoration: none; /* removes the link-ish look */
     }
-
     /* hover mouse effect */
     .navbar li a:hover {
         background-color:#848871;
