@@ -1,0 +1,227 @@
+/* CSS HEX */
+:root{
+--silver: #bfacaaff;
+--ink-black: rgb(25, 26, 28);
+--glaucous: #507dbcff;
+--chartreuse: #bced09ff;
+--lavender: #e1e2efff;
+}
+
+body{
+  margin: 0 auto;
+  max-width: 1000px;
+  background-color:var(--ink-black);
+  color: var(--lavender);
+  font-family: "Funnel Display", sans-serif;
+}
+
+section {
+  scroll-margin-top: 100px; /* adjust to your header height */
+}
+
+h2{
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Head section */
+
+  .header {
+    background-color: var(--ink-black);
+    color: var(--chartreuse);
+    border-radius: 5px;  /* rounded corners */
+    box-shadow: 0 8px 20px var(--silver);
+    display: flex;
+    justify-content: space-between; /* pushes logo left, nav right */
+    align-items: center;            /* vertically centers */
+    padding: 16px 20px;
+
+    /* Makes it so the header sticks to the top of the page */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* keeps it above other content */
+  }
+
+  .logo {
+  font-family: "Archivo Black", sans-serif;
+  font-size: 56px;
+  }
+
+  .navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;          
+    margin: 0;
+    padding: 0;
+  }
+
+  .navbar li {
+    padding: 0;
+  }
+
+  .navbar li a {
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    color:var(--glaucous);
+  }
+
+
+/* Home section */
+  .home{
+    text-align: center;
+    padding: 40px 0px;
+    background-color:var();
+    color:var(--glaucous);
+  }
+
+
+/* Services section */
+  .services{
+    padding: 40px 20px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  .services h2 {
+    color: var(--chartreuse);
+  }
+
+  .services h3 {
+    color: var(--glaucous);
+  }
+
+  .services-item{
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 20px;  /* rounded corners */
+    box-shadow: 0 8px 20px var(--silver);
+    background-color: var();
+    
+  }
+
+/* Portfolio section */
+  .portfolio {
+    padding: 40px 0px;
+  }
+
+  .portfolio h2{
+    color: var(--chartreuse);
+  }
+
+  .portfolio-item {
+    display:grid;
+    padding-bottom: 20px;
+    gap: 35px;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-item figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .portfolio-item figure img {
+    width: 250px;
+    height: auto;
+    display: block;
+  }
+
+  .portfolio-item figure figcaption {
+    text-align: center;
+    margin-top: 6px;
+    font-size: 0.9em;
+    color: var(--lavender);
+  }
+
+/* About section */
+  .about{
+    padding: 40px 0px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .about h2{
+    color: var(--chartreuse);
+  }
+
+
+/* Contact section */
+  .contact{
+    padding: 40px 0px;
+    max-width: 800px;
+    margin: 0 auto;
+
+  }
+
+  .contact h2{
+    color: var(--chartreuse);
+  }
+  
+  .contact-info {
+  max-width: 90%;
+  margin: 0 auto 24px auto;
+  padding: 0 10px;
+  color: var(--lavender);
+  }
+
+  .contact-info h3 {
+  color: var(--glaucous);
+  margin-bottom: 10px;
+  }
+
+  .contact-info p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+  }
+
+
+  .contact-form form {
+  padding: 40px;
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px var(--silver);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--glaucous);
+    border-radius: 10px;
+    background-color: var(--ink-black);
+    color: var(--lavender);
+    font-family: "Funnel Display", sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--chartreuse);
+}
+
+.contact-form button[type="submit"] {
+  align-self: flex-start;
+  padding: 12px 32px;
+  background-color: var(--chartreuse);
+  color: var(--ink-black);
+  border: none;
+  border-radius: 10px;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
