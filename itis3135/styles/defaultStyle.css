@@ -1,0 +1,117 @@
+:root{
+    /*Color Pallete*/
+    --cerulean: #007ea7ff;
+    --prussian-blue: #011936ff;
+    --silver: #cdcdcdff;
+    --ash-brown: #725e54ff;
+    --white-smoke: #f5f5f5;
+    --vivid-tangerine: #ff7f11ff;
+}
+
+
+body{
+    background-color: var(--white-smoke);
+    color: var(--prussian-blue);
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*header section*/
+    header{
+        background-color: var(--prussian-blue);
+        color: var(--vivid-tangerine);
+        text-align: center;
+        border-radius: 5px;
+        display: block;
+        padding: 20px 20px;
+        position: sticky;
+        top: 1px;
+        z-index: 1000;
+    }
+
+    /*primary nav bar*/
+    .primary-navbar ul{
+        color: var(--silver);
+        list-style-type: none;
+    }
+    .primary-navbar ul li{
+        padding: 1rem;
+        display: inline;
+    }
+    .primary-navbar ul li a {
+        text-decoration: none;
+        color: var(--silver);
+}
+
+/* Main section*/
+    main{
+        background-color: var(--silver);
+        color: var(--prussian-blue);
+        border-radius: 10px;
+        padding: 10px 10px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        
+    }
+    .assignments{
+        text-align: center;
+    }
+
+    /* Secundary nav bar*/
+    .secondary-navbar ul li{
+        display: inline;
+        padding: 1rem;
+        color: var(--cerulean);
+    }
+
+    .secondary-navbar ul li a{
+        color: var(--cerulean);
+        text-decoration: none;
+    }
+
+/* Footer section */
+   footer {
+    color: var(--silver);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 1rem;
+    }
+
+    .footer-tittle {
+    color: var(--prussian-blue);
+    margin-bottom: 0.5rem;
+    }
+    
+    .footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+
+    .footer-links ul li {
+        display: inline;
+        padding: 1rem;
+    }
+
+    .footer-links ul li p {
+        display: inline;
+        margin: 0;
+    }
+
+    .footer-links ul li a {
+        color: var(--cerulean);
+        text-decoration: none;
+    }
+
+    .made-by {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--prussian-blue);
+    }
+
+    .made-by a {
+        color: var(--prussian-blue);
+        text-decoration: none;
+    }
