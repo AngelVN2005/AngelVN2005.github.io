@@ -47,11 +47,14 @@ body{
         color: var(--prussian-blue);
     }
 
+    .page-title{
+        text-align: center;
+        font-size: larger;
+    }
 
     section img{
         max-width: 800px;
         max-height: 400px;
-        
         max-width: 100%;
         height: auto;
         width: auto\9;
