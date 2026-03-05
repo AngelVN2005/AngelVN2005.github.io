@@ -25,9 +25,6 @@ body{
         border-radius: 5px;
         display: block;
         padding: 20px 20px;
-        position: sticky;
-        top: 1px;
-        z-index: 1000;
     }
 
     /*primary nav bar*/
@@ -45,18 +42,39 @@ body{
 }
 
 /* Main section*/
+    
     main{
-        background-color: var(--silver);
         color: var(--prussian-blue);
+    }
+
+
+    section img{
+        max-width: 800px;
+        max-height: 400px;
+        
+        max-width: 100%;
+        height: auto;
+        width: auto\9;
+    }
+
+    .section{
+        background-color: var(--silver);
         border-radius: 10px;
         padding: 10px 10px;
         margin-top: 1rem;
         margin-bottom: 1rem;
-        
-    }
-    .assignments{
         text-align: center;
     }
+
+    .info-section{
+        background-color: var(--silver);
+        border-radius: 10px;
+        padding: 10px 10px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: justify;
+    }
+
 
     /* Secundary nav bar*/
     .secondary-navbar ul li{
