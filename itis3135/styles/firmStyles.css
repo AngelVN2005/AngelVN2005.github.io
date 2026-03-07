@@ -19,12 +19,21 @@ section {
   scroll-margin-top: 100px; /* adjust to your header height */
 }
 
+.section-title{
+  color: var(--chartreuse);
+}
+
 h2{
   text-align: center;
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
+h3{
+  color: var(--glaucous);
+}
+
 
 /* Head section */
 
@@ -85,14 +94,6 @@ h2{
     max-width: 800px;
   }
 
-  .services h2 {
-    color: var(--chartreuse);
-  }
-
-  .services h3 {
-    color: var(--glaucous);
-  }
-
   .services-item{
     padding: 25px;
     margin-bottom: 25px;
@@ -105,10 +106,6 @@ h2{
 /* Portfolio section */
   .portfolio {
     padding: 40px 0px;
-  }
-
-  .portfolio h2{
-    color: var(--chartreuse);
   }
 
   .portfolio-item {
@@ -147,10 +144,6 @@ h2{
     max-width: 800px;
     margin: 0 auto;
   }
-  .about h2{
-    color: var(--chartreuse);
-  }
-
 
 /* Contact section */
   .contact{
@@ -159,21 +152,12 @@ h2{
     margin: 0 auto;
 
   }
-
-  .contact h2{
-    color: var(--chartreuse);
-  }
   
   .contact-info {
   max-width: 90%;
   margin: 0 auto 24px auto;
   padding: 0 10px;
   color: var(--lavender);
-  }
-
-  .contact-info h3 {
-  color: var(--glaucous);
-  margin-bottom: 10px;
   }
 
   .contact-info p {
@@ -193,8 +177,7 @@ h2{
   gap: 14px;
 }
 
-  .contact-form input,
-  .contact-form textarea {
+  .contact-form input {
     width: 100%;
     padding: 12px 16px;
     border: 1.5px solid var(--glaucous);
@@ -204,7 +187,21 @@ h2{
     font-family: "Funnel Display", sans-serif;
     font-size: 1rem;
     box-sizing: border-box;
-    outline: none;
+    
+    transition: border-color 0.2s;
+  }
+
+    .contact-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid var(--glaucous);
+    border-radius: 10px;
+    background-color: var(--ink-black);
+    color: var(--lavender);
+    font-family: "Funnel Display", sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    
     transition: border-color 0.2s;
   }
 
