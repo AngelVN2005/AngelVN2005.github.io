@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel's Hobby / What</title>
+
+    <!--Import the cloud thingy-->
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+
+    <!-- Import Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Unica+One&display=swap" rel="stylesheet">
+
+    <!--Styles -->
+    <style>
+        :root {
+            --laser-blue: #2b59c3;
+            --tropical-teal: #44a1a0;
+            --bright-snow: #fafafa;
+            --graphite: #323031;
+            --dust-grey: #dbd4d3;
+        }
+
+        /* Base Layout */
+
+        body {
+            background-color: var(--bright-snow);
+            color: var(--graphite);
+            max-width: 1100px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-family: Arial, sans-serif;
+            padding: 0 1rem;
+        }
+
+        /* Typography */
+
+        h1 {
+            font-family: "Audiowide", sans-serif;
+            color: var(--laser-blue);
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        h2 {
+            font-family: "Unica One", sans-serif;
+            color: var(--laser-blue);
+            border-bottom: 2px solid var(--dust-grey);
+            padding-bottom: 4px;
+        }
+
+        h3 {
+            font-family: "Unica One", sans-serif;
+            color: var(--tropical-teal);
+        }
+
+        caption {
+            font-family: "Unica One", sans-serif;
+            color: var(--tropical-teal);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation */
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 2rem 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        header nav a {
+            text-decoration: none;
+            font-family: "Unica One", sans-serif;
+            color: var(--graphite);
+            font-size: 1rem;
+        }
+
+        header nav a:hover {
+            color: var(--tropical-teal);
+        }
+
+        header nav a.active {
+            color: var(--laser-blue);
+            border-bottom: 2px solid var(--laser-blue);
+        }
+
+        /* Sections */
+
+        section {
+            display: none;
+            margin-bottom: 3rem;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        /* Images */
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 4px;
+        }
+
+
+        figure {
+            margin: 1.5rem 0;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: var(--graphite);
+            opacity: 0.8;
+            text-align: center;
+        }
+
+        /* Table */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border-bottom: 1px solid var(--dust-grey);
+            text-align: left;
+        }
+
+        th {
+            font-family: "Unica One", sans-serif;
+            color: var(--laser-blue);
+        }
+
+        /* Mech Grid */
+        .mech-grid {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .mech-grid figure {
+            flex: 1;
+            text-align: center;
+            margin: 0;
+        }
+
+        .mech-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+        }
+
+        /* Who Grid */
+        .who-name {
+            font-family: "Unica One", sans-serif;
+            color: var(--tropical-teal);
+            font-size: 1rem;
+            margin: 0.5rem 0 0.25rem 0;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-row-gap: 1.5rem;
+            grid-column-gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .who-grid figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        .who-grid img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 4px;
+        }
+
+        .who-grid figcaption h3 {
+            margin: 0.5rem 0 0.25rem 0;
+        }
+
+        .who-grid figcaption p {
+            font-size: 0.9rem;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--dust-grey);
+            margin-top: 3rem;
+            padding: 1rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--laser-blue);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: var(--tropical-teal);
+        }
+
+        /* Slideshow */
+
+        .slideShow-What {
+            width: 100%;
+            display: none;
+        }
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Show/Hide Sections
+        function showSection(id) {
+            document.querySelectorAll('main section').forEach((s) => s.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+
+            document.querySelectorAll('header nav a').forEach((a) => a.classList.remove('active'));
+            document.querySelector(`header nav a[href="#${id}"]`).classList.add('active');
+
+            const section = document.getElementById(id);
+            document.title = "Angel's Hobby / " + section.dataset.title;
+        }
+
+        // Run on load to show first section and set initial title
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('What');
+        });
+
+        // Automatic Slideshow
+        var slideIndex = 0;
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("slideShow-What");
+
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+
+            slideIndex++;
+
+            if (slideIndex > x.length) {
+                slideIndex = 1;
+            }
+
+            x[slideIndex - 1].style.display = "block";
+
+            setTimeout(carousel, 2000);
+        }
+
+        document.addEventListener("DOMContentLoaded", carousel);
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>LANCER RPG</h1>
+
+        <nav>
+            <ul>
+                <li><a href="#What" onclick="showSection('What')">What</a></li>
+                <li><a href="#When" onclick="showSection('When')">When</a></li>
+                <li><a href="#Where" onclick="showSection('Where')">Where</a></li>
+                <li><a href="#How" onclick="showSection('How')">How</a></li>
+                <li><a href="#Why" onclick="showSection('Why')">Why</a></li>
+                <li><a href="#Who" onclick="showSection('Who')">Who</a></li>
+                <li><a href="#Prompts" onclick="showSection('Prompts')">AI Prompts</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- WHAT / Home, loads first -->
+        <section id="What" data-title="What">
+            <h2>What is LANCER</h2>
+
+            <p>One of the hobbies that has captivated me the most, and in which I have been actively participating for
+                the last couple of years, has been LANCER RPG. LANCER is a science fiction tabletop (or online)
+                role-playing game about mecha pilots, created by Miguel Lopez-Hall and Tom Bloom. The game has a really
+                in-depth combat system combat system, and some baselines for storytelling so that the system fits for
+                most of the settings people might want to play in.</p>
+
+            <p>In the simplest of terms, LANCER is a game where you play as the pilot of a variety of mechas.
+                Think of the Jaegers from Pacific Rim, the EVAs from Neon Genesis Evangelion, the Mobile Suits from
+                Gundam, or if none of those ring a bell, just think huge robots you can pilot into combat.
+                In LANCER you have a wide range of mechas to choose from depending on your preferred playstyle:
+                Do you like to pepper your rivals from a distance? You could use the luxurious <strong>Monarch</strong>
+                and rain down missile barrages atop your enemies. Do you prefer instead to engage in glorious melee
+                combat? You could use the ruthless <strong>Blackbeard</strong> and rip and tear your foes with chain
+                axes. Or, do you perhaps enjoy watching the smiles erase from your enemies' faces as you charge up
+                the weapon known as the <em>Apocalypse Rail</em>? Well, the <strong>Barbarossa</strong> is there
+                for a reason.</p>
+
+            <p>Now, in addition to the cool mechs, the game allows players to tell amazing stories,
+                utilizing the rich in-game lore about this post-futuristic setting where lancer takes place in, 5016
+                years after the creation of Union, an interplanetary government/corporation that has united countless
+                worlds where humans settled. The competing corporations that have power over wide arays of worlds, and
+                count with thier own planetary fleets. And the overall Cyberpunk+ feeling of the setting. This are just
+                some of the things that make LANCER so awsome.</p>
+
+            <div class="section-slideShow">
+                <img class="slideShow-What" src="../images/BlackbeardMonarchAndBabarossa.png"
+                    alt="LANCER slideshow image 1">
+                <img class="slideShow-What" src="../images/NelsonDashing.png" alt="LANCER slideshow image 2">
+                <img class="slideShow-What" src="../images/SoldiersOnWheatField.png" alt="LANCER slideshow image 3">
+                <img class="slideShow-What" src="../images/MercenariesInABar.png" alt="LANCER slideshow image 4">
+            </div>
+
+        </section>
+
+        <!-- WHEN -->
+        <section id="When" data-title="When">
+            <h2>When do I Play LANCER</h2>
+
+            <p>I play LANCER with a group of friends. We try to keep our schedule consistent, but because we are all
+                college students the scheduling has changed depending on our current semesters. We normally try to play
+                2 times a week, every other week, or 4 times a month.</p>
+
+            <p>As an example, here is what my friends and I did over the month of February in our LANCER campaign
+                campaign.</p>
+
+            <table>
+                <caption>
+                    What Happened in February
+                </caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Day</th>
+                        <th scope="col">Month</th>
+                        <th scope="col">Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>11th</td>
+                        <td>February</td>
+                        <td>The group had to go to a combat zone to salvage resources (it didn't end well).</td>
+                    </tr>
+                    <tr>
+                        <td>14th</td>
+                        <td>February</td>
+                        <td>The team had to escape from an enemy emergency response team.</td>
+                    </tr>
+                    <tr>
+                        <td>25th</td>
+                        <td>February</td>
+                        <td>The squad had time to recover from our last endeavor, and we got some quality
+                            out-of-combat moments.</td>
+                    </tr>
+                    <tr>
+                        <td>28th</td>
+                        <td>February</td>
+                        <td>The team was sent out to intercept an enemy resource convoy (for some reason we spent
+                            most of the day joking about dehydrated soy cubes).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- WHERE -->
+        <section id="Where" data-title="Where">
+            <h2>Where Can You Play LANCER</h2>
+
+            <p>To play LANCER, the only real things you need are something to represent your mech, something to
+                represent the enemies, and optionally something to represent the terrain. This is normally done
+                either by using physical figures and terrain, or by using software to depict each character as
+                tokens and use maps for the terrain.</p>
+
+            <p>As for playing online, there are platforms such as Owlbear Rodeo and Roll20 where you can use a virtual
+                tabletop environment to achieve all of the above. Playing online has the advantage of
+                eliminating distance as an issue, with the trade-off of needing a communication app so everyone
+                can talk clearly.</p>
+
+            <figure>
+                <img src="../images/OwlbearRodeo.jpg" alt="Screenshot of Owlbear Rodeo virtual tabletop">
+                <figcaption>Owlbear Rodeo: a popular online virtual tabletop.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="../images/Roll20.png" alt="Screenshot of Roll20 virtual tabletop">
+                <figcaption>Roll20, another widely used online platform for TTRPGs.</figcaption>
+            </figure>
+
+            <p>As for playing in person, there are many options such as your local game store, public libraries,
+                or even your own home. The only real limiting factor would be the distance between that location
+                and the people in your group.</p>
+
+            <figure>
+                <img src="../images/GameShop.png" alt="Inside of a local game store">
+                <figcaption>Local game stores are a great place to find a group and play.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="../images/localLibrary.png" alt="Inside of a public library">
+                <figcaption>Public libraries often offer quiet, welcoming spaces for tabletop gaming.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="../images/livingRoom.png" alt="A living room with a cozy sofa">
+                <figcaption>Playing at home is always an option, comfortable and familiar.</figcaption>
+            </figure>
+        </section>
+
+        <!-- HOW -->
+        <section id="How" data-title="How">
+            <h2>How Can You Play LANCER</h2>
+
+            <p>After hearing about this hobby, you might be wondering how you can become part of it. Well, to
+                play LANCER you would need a few things.</p>
+
+            <p>First, you are going to need a group of friends to play with. Don't have any? You can either go to
+                your local game store where there is a good chance you will find a group willing to take you in,
+                and you would get to know new people in the process, or you could look online for the hundreds of
+                groups that would be more than happy to have you.</p>
+
+            <figure>
+                <img src="../images/GroupOfFriends.png" alt="A group of friends gathered around a table">
+                <figcaption>Playing with friends makes every session memorable.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="../images/GameShop.png" alt="Inside of a local game store">
+                <figcaption>Local game stores are a great place to find your first group.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="../images/InternertForumLFG.png" alt="Online LANCER community forums">
+                <figcaption>Online communities are always looking for new pilots to join.</figcaption>
+            </figure>
+
+            <p>Then you will need to make a character, your pilot. After all, this is an RPG. You can make it as
+                wild or as basic as you like; there is nothing wrong with playing someone like “John Human.”</p>
+
+            <figure>
+                <img src="../images/MercenariesInABar.png" alt="Character creation sheet example">
+                <figcaption>Character creation, the first step to becoming a pilot.</figcaption>
+            </figure>
+
+            <p>After making your character, now comes the part that makes this LANCER and not D&amp;D or Cyberpunk RED,
+                picking your mech. Most games start between Licence Level 0 and Licence Level 2. Assuming you start at
+                LL0, you will have three options: the <strong>Everest</strong>, the balanced frame focused on
+                speed and reliability; the <strong>Sagarmatha</strong>, the tanky frame built to shield allies and
+                provide buffs; and the <strong>Chomolungma</strong>, the hacking frame focused on disrupting
+                enemy systems and controlling the battlefield.</p>
+            <div class="mech-grid">
+                <figure>
+                    <img src="../images/GMS-Everest.png" alt="The Everest mech frame" height="500">
+                    <figcaption>The Everest: balanced, reliable, and a solid choice for any pilot.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/GMS-Sagarmatha.png" alt="The Sagarmatha mech frame" height="500">
+                    <figcaption>The Sagarmatha: built to protect and support your squad.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/GMS-Chomolungma.jpg" alt="The Chomolungma mech frame" height="500">
+                    <figcaption>The Chomolungma: control the battlefield through superior hacking.</figcaption>
+                </figure>
+            </div>
+
+            <p>With your character and your mech ready, you can finally start playing with your group. Good luck,
+                pilot.</p>
+        </section>
+
+        <!-- WHY -->
+        <section id="Why" data-title="Why">
+            <h2>Why should you try LANCER</h2>
+
+            <p>Why play LANCER, what is it that draws people into this game? you might be asking. Well, I think there
+                are many answers for that but there's 4 main points that encapsulate why people are drawn into the
+                hobby, and these are:</p>
+
+            <ul>
+                <li><strong>Tactical Combat</strong> has a deep combat system where positioning, teamwork, and mech
+                    builds really matter. Every battle feels like a puzzle where the squad has to coordinate abilities
+                    and make smart decisions.</li>
+
+                <li><strong>Creative Storytelling</strong> Unlike many tactical games, LANCER also leaves room for
+                    storytelling. Pilots can have their own backgrounds, motivations, and relationships, and campaigns
+                    can explore everything from corporate wars to strange alien worlds.</li>
+
+                <li><strong>Customizable Mechs</strong> One of the most fun parts of LANCER is building your mech. As
+                    you level up, you unlock new weapons, systems, and frames that completely change how you play.</li>
+
+                <li><strong>Playing With Friends</strong> More than anything, the best part is spending time with
+                    friends. Some sessions are intense combat missions, while others are just us joking around and
+                    building our characters' stories.</li>
+            </ul>
+
+        </section>
+
+        <!-- WHO -->
+        <section id="Who" data-title="Who">
+            <h2>Who I Play LANCER With</h2>
+
+            <p>LANCER is a game meant to be played and enjoyed as a group, and for that reason I think it is reasonable
+                for
+                me to talk about the members of my group and their characters.</p>
+
+            <div class="who-grid">
+
+                <figure>
+                    <img src="../images/GoeringCompany.jpg" alt="Ray, the Game Master">
+                    <figcaption>
+                        <p class="who-name"><strong>Ray — Game Master</strong></p>
+                        <p>The mastermind behind our current campaign. He is a very skilled writer and a ruthless game
+                            master, always throwing a challenge at us.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/Lancer_04_Glory_screenshot.png" alt="Gloryline">
+                    <figcaption>
+                        <p class="who-name"><strong>Daniel — As Gloryline</strong></p>
+                        <p>The gremlin of the team, an orphaned child soldier that has grown up in wars, and plays
+                            with the wrecks of her enemies as dolls.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/Circe.png" alt="Circe">
+                    <figcaption>
+                        <p class="who-name"><strong>Gabe — As Circe</strong></p>
+                        <p>A gentle giant of a person, an ex-soldier now working as a mercenary to be able to fund
+                            an orphanage.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/Pol.png" alt="Pol">
+                    <figcaption>
+                        <p class="who-name"><strong>Easson — As Pol</strong></p>
+                        <p>The strategist and de facto leader of the group. He doesn't have a sense of humor and takes
+                            things so seriously that it becomes funny.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/Raiden.jpeg" alt="Raiden">
+                    <figcaption>
+                        <p class="who-name"><strong>Luke — As Raiden</strong></p>
+                        <p>The samurai hacker archetype. Obsessed with technology to the point of having an AI
+                            girlfriend, and working as a mercenary to afford a body to upload her into.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/Asrael.png" alt="Asrael">
+                    <figcaption>
+                        <p class="who-name"><strong>Etherial — As Asrael</strong></p>
+                        <p>The gunslinging priest, follower of a religion that worships mechs as gods, searching for
+                            the one mech to rule them all.</p>
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <img src="../images/Duarte.png" alt="Duarte">
+                    <figcaption>
+                        <p class="who-name"><strong>Myself — As Duarte</strong></p>
+                        <p>A hot-headed idiot who rushes into battle without much regard for his life. A revolutionary
+                            fighter turned mercenary to acquire funds for the revolution back home.</p>
+                    </figcaption>
+                </figure>
+            </div>
+
+            <p>The team are members of a taskforce under the Goering Mercenary Company, they are assigned all kinds of
+                jobs that the planetary governments or the mega-corps dont want to be associated with, such as black
+                ops, sabotage, supply-line disruptions, etc.</p>
+
+        </section>
+
+        <!-- AI PROMPTS -->
+        <section id="Prompts" data-title="AI Prompts">
+            <h2>AI Prompts</h2>
+
+            <h3>Claude</h3>
+            <ul>
+                <li>How can I have a single index.html file divided into sections, but only show 1 section at a time,
+                    and be able to switch between sections by using a navigation bar?</li>
+                <li>Ok and from there how would you be able to switch the page's title depending on the section like:
+                    page / home, or page / about, when their section is chosen?</li>
+                <li>Can you help me fix the slideshow script: 'carousel' was used before it was defined.</li>
+                <li>I want you to help me make the skeleton for a page I'm making... [provided full requirements]</li>
+                <li>This is the basic (incomplete) structure of the page and its sections, can you help me plug it
+                    into the code I have?</li>
+                <li>can you help me display this contents horizontaly [Who section]</li>
+            </ul>
+            <figure>
+                <img src="../images/ClaudeChat.png" alt="Screenshot of AI prompt conversation">
+                <figcaption>Screenshot of an AI prompt session using Claude to help build this page.</figcaption>
+            </figure>
+
+            <h3>Gemini</h3>
+            <ul>
+                <li>Can you create an image of a Monarch, a Blackbeard and a Barbarossa. The Blackbeard is holding
+                    a chain-axe and throwing its hook at an enemy. The Monarch flying up above while sending missile
+                    barrages on its enemies. And the Barbarossa, tall as a mountain, looming in the background as it
+                    charges its Apocalypse Rail.</li>
+
+                <li>the scene is of a city in ruins, there are recked enemy mechs across, and there are others fighting
+                    in the background, there is going to be a IPSN Nelson frame rushing through the battlefield with its
+                    thrusters at max capacity</li>
+
+                <li>generate an image of the inside of a public library, with the people inside blured, the focus of the
+                    image are the book-shelves</li>
+
+                <li>generate an image of a game/hobby shop, long tables with groups of people on the playing table top
+                    games, and shelves in the background with boxes for those table games. in the same maner as the last
+                    request, please blur any on the people as they are only there to add life to the place</li>
+
+                <li>now i want you generate another image about LANCER RPG, thi time about a wheat field that extends
+                    through rolling hills, on the wheat field GMS soldiers with their iconic white mechas with red
+                    accents, patrolling the area. showing how LANCER can be pretty at times</li>
+
+                <li>generate an image a group of 3 mercenary LANCER pilots drinking in a bar, neon lights, tables with
+                    other people blured, and window to the outside on the city in the background. as for the
+                    mercenaries:
+
+                    one of them is of darker skin complexion, and bleached hair, he has some cybernetic implants on his
+                    face, they are lines of chrome that go from bellow his right eye to his right ear and then down to
+                    his neck. he has a golden thooth, and he is holding the glass of beer on his hand as he laughs with
+                    his team. use the colors green, purple, yellow, and black for this characters outfit
+
+                    another mercenary is a more quiet and reserved than the rest. he is wearing darker clothes, and has
+                    some kind of wearable hacking deck in front of him on the table. he has pale skin, and dark hair.
+                    use the colors black, dark blue, and grey for this character's outfit.
+
+                    and then there is another mercenary, a muscular woman with visible scars across her arms and face.
+                    she is laughing with the first mercenary, and they seem to be having a great time. she is not
+                    holding her drink, but it is in front of her on the table. she is wearing a bullet proof vest inside
+                    the bar, ready for action if it comes. use red, black, and white, with metalic accents for this
+                    character's outfit.</li>
+
+                <li>I want you to generate an image of a group of friends gathered across a table</li>
+
+                <li>generate an image of a generic internet forum, such as reddit, where there are people writting about
+                    finding a group to play LANCER with</li>
+
+                <li>generate an image of a GMS Everest</li>
+
+                <li>now do the same for a GMS Sagarmatha, its a size 2 mech so make sure the weight and size shows</li>
+
+                <li>now for the GMS chomolungma, make it about the same size as the everest, but make it thiner and give
+                    it anthenas or something to show that it is the hacking frame of GMS</li>
+
+                <li>generate an image of the logo of a mercenary company, of a group of mercenaries in a LANCER
+                    campaign. the name of the company is goering, its base of operations is a orbital satelite ship
+                    known as the rook.
+
+                    have emblem be a circle with the name of the company inside, surrounded by stars, and bellow the
+                    name the sillouette of the rook.
+
+                    use dark green, black, white and gold for this</li>
+            </ul>
+            <figure>
+                <img src="../images/GeminiChat.png" alt="Screenshot of AI prompt conversation using Gemini">
+                <figcaption>Screenshot of an AI prompt session using Gemini to help build this page.</figcaption>
+            </figure>
+
+            <h3>Chat GPT</h3>
+            <ul>
+                <li>can you help me fix any grammatical errors within this file ? [provided whole file]</li>
+            </ul>
+            <figure>
+                <img src="../images/GPTChat.png" alt="Screenshot of AI prompt conversation using Chat GPT">
+                <figcaption>Screenshot of an AI prompt session using Chat GPT to help build this page.</figcaption>
+            </figure>
+
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>
+            <a href="https://validator.w3.org/check?uri=referer">HTML</a> |
+            <a href="https://jigsaw.w3.org/css-validator/check/referer">CSS</a> |
+            <a href="https://wave.webaim.org/refer">Accessibility</a>
+        </p>
+        <p>
+            Page made by <a href="../avndesigns/index.html">Angel Villar Nolasco</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
