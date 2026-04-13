@@ -15,14 +15,35 @@
     <div data-include="../components/wendysHeader.html"></div>
 
     <main>
-       <h2>Cart</h2>
+    <section id="cart-page">
+        <div class="page-heading">
+            <h2>Cart</h2>
+        </div>
 
-    </main>
+        <div id="cart-container">
+            <!-- Items will be injected here -->
+        </div>
+
+        <div id="cart-summary">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+
+            <div class="cart-actions">
+                <button id="clear-cart" class="btn-outline">Clear Cart</button>
+                <button id="checkout-btn" class="btn-solid">Proceed to Checkout</button>
+            </div>
+        </div>
+    </section>
+</main>
 
     <div data-include="../components/wendysFooter.html"></div>
 
-    <!--Imports "include"-->
+    <!--Imports Include functionality-->
     <script src="../scripts/HTMLInclude.min.js"></script>
+    <!-- Imports Script page -->
+    <script src="../scripts/wendyScript.js"></script>
 </body>
 
 </html>
