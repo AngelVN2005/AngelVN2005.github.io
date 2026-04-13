@@ -145,20 +145,20 @@
         }
 
         /* Mech Grid */
-        .mech-grid {
+        .mech-Grid {
             display: flex;
             gap: 1rem;
             justify-content: center;
             align-items: flex-end;
         }
 
-        .mech-grid figure {
+        .mech-Grid figure {
             flex: 1;
             text-align: center;
             margin: 0;
         }
 
-        .mech-grid img {
+        .mech-Grid img {
             width: 100%;
             height: 400px;
             object-fit: contain;
@@ -172,7 +172,7 @@
             margin: 0.5rem 0 0.25rem 0;
         }
 
-        .who-grid {
+        .who-Grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             grid-row-gap: 1.5rem;
@@ -180,12 +180,12 @@
             margin-top: 1rem;
         }
 
-        .who-grid figure {
+        .who-Grid figure {
             margin: 0;
             text-align: center;
         }
 
-        .who-grid img {
+        .who-Grid img {
             width: 100%;
             height: 280px;
             object-fit: cover;
@@ -193,11 +193,9 @@
             border-radius: 4px;
         }
 
-        .who-grid figcaption h3 {
-            margin: 0.5rem 0 0.25rem 0;
-        }
+        
 
-        .who-grid figcaption p {
+        .who-Grid figcaption p {
             font-size: 0.9rem;
             margin: 0;
             text-align: justify;
@@ -467,7 +465,7 @@
                 speed and reliability; the <strong>Sagarmatha</strong>, the tanky frame built to shield allies and
                 provide buffs; and the <strong>Chomolungma</strong>, the hacking frame focused on disrupting
                 enemy systems and controlling the battlefield.</p>
-            <div class="mech-grid">
+            <div class="mech-Grid">
                 <figure>
                     <img src="../images/GMS-Everest.png" alt="The Everest mech frame" height="500">
                     <figcaption>The Everest: balanced, reliable, and a solid choice for any pilot.</figcaption>
@@ -523,7 +521,7 @@
                 for
                 me to talk about the members of my group and their characters.</p>
 
-            <div class="who-grid">
+            <div class="who-Grid">
 
                 <figure>
                     <img src="../images/GoeringCompany.jpg" alt="Ray, the Game Master">
@@ -598,7 +596,7 @@
         <!-- AI PROMPTS -->
         <section id="Prompts" data-title="AI Prompts">
             <h2>AI Prompts</h2>
-
+            
             <h3>Claude</h3>
             <ul>
                 <li>How can I have a single index.html file divided into sections, but only show 1 section at a time,
