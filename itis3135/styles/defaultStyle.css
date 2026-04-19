@@ -33,18 +33,23 @@ header {
 
 /*primary nav bar*/
 .primary-navbar ul {
+    font-size: 16px;
     color: var(--silver);
-    list-style-type: none;
+    padding-bottom: 1rem;
 }
 
 .primary-navbar ul li {
-    padding: 1rem;
+    padding: 5px;
     display: inline;
 }
 
 .primary-navbar ul li a {
     text-decoration: none;
     color: var(--silver);
+}
+
+.primary-navbar-header{
+    color: var(--cerulean);
 }
 
 /* Main section*/
@@ -86,15 +91,21 @@ section img {
 
 
 /* Secundary nav bar*/
+
 .secondary-navbar ul li {
+    font-size: 16px;
     display: inline;
-    padding: 1rem;
-    color: var(--cerulean);
+    padding: 5px;
+    color: var(--silver);
 }
 
 .secondary-navbar ul li a {
-    color: var(--cerulean);
+    color: var(--silver);
     text-decoration: none;
+}
+
+.secondary-navbar-header{
+    color: var(--cerulean);
 }
 
 /* Footer section */
